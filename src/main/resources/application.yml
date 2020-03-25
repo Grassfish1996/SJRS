@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /srjs
+#DB Configuration
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bg?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8
+    username: grassfish
+    password: password
+#logging
+logging:
+  level:
+    com.xc.springboot: debug
