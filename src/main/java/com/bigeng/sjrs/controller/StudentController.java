@@ -4,12 +4,9 @@ package com.bigeng.sjrs.controller;
 import com.bigeng.sjrs.entity.Student;
 import com.bigeng.sjrs.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -23,7 +20,6 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/student")
-@CrossOrigin(origins = {"http://localhost:4200", "null"})
 public class StudentController {
 
     @Autowired
@@ -34,6 +30,24 @@ public class StudentController {
     public List<Student> list(){
         List<Student> list = studentService.list();
         return list;
+    }
+
+    @PostMapping("update")
+    @ResponseBody
+    public boolean update(@RequestBody Student student){
+        return studentService.updateById(student);
+    }
+
+    @PostMapping("add")
+    @ResponseBody
+    public boolean add(@RequestBody Student student){
+        return studentService.save(student);
+    }
+
+    @PostMapping("delete")
+    @ResponseBody
+    public boolean delete(@RequestBody List<String> idList){
+        return studentService.removeByIds(idList);
     }
 
 }

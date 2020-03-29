@@ -24,7 +24,7 @@ public class MybatisPlusGenerator {
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("bigeng");
         gc.setOpen(false);
-        gc.setFileOverride(true);
+//        gc.setFileOverride(true);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
@@ -75,8 +75,8 @@ public class MybatisPlusGenerator {
 //        strategy.setSuperEntityClass("com.baomidou.mybatisplus.samples.generator.common.BaseEntity");
         strategy.setEntityLombokModel(true);
 //        strategy.setSuperControllerClass("com.baomidou.mybatisplus.samples.generator.common.BaseController");
-        strategy.setInclude("student");
-        strategy.setSuperEntityColumns("id");
+        strategy.setInclude("score");
+//        strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
 //        strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);
