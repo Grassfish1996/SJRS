@@ -1,7 +1,9 @@
 package com.bigeng.sjrs.controller;
 
 
+import com.bigeng.sjrs.entity.Fvstuscore;
 import com.bigeng.sjrs.entity.Score;
+import com.bigeng.sjrs.service.IFvstuscoreService;
 import com.bigeng.sjrs.service.IScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,11 +26,13 @@ public class ScoreController {
 
     @Autowired
     IScoreService scoreService;
+    @Autowired
+    IFvstuscoreService fvstuscoreService;
 
     @GetMapping("list")
     @ResponseBody
-    public List<Score> getList(){
-        return scoreService.list();
+    public List<Fvstuscore> getList(){
+        return fvstuscoreService.list();
     }
 
     @PostMapping("add")
