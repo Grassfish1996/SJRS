@@ -21,15 +21,4 @@ import org.springframework.stereotype.Service;
 @Service
 public class SubjectServiceImpl extends ServiceImpl<SubjectMapper, Subject> implements ISubjectService {
 
-    @Autowired
-    IScoreService scoreService;
-    @Autowired
-    IStudentService studentService;
-
-    @Override
-    public boolean save(Subject subject){
-        //添加限制条件  判断学生 和 课程是否存在
-        return this.save(subject);
-    }
-
 }
