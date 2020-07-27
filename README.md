@@ -1,2 +1,2 @@
 # SJRS
-Students Job Recommendation System
+学生管理系统后端
